@@ -3,4 +3,14 @@ Joakim Rytterlöv, jr223cs
 
 
 # Project: Weather Data System
-This is a tutorial on how to build, configure and run a custom weather data system. The devices used for gathering temperature readings are three Raspberry Pi Pico WH with the MicroPython firmware installed. The full requirements list for both hardware and software can be found below in the section “Requirements / Materials”.
+This is a tutorial on how to build, configure and run a custom weather data system. The devices used for gathering temperature readings are three Raspberry Pi Pico WH with the MicroPython firmware installed. The full requirements list for both hardware and software can be found below in the section “_Requirements / Materials_”.
+
+
+# Background
+This project has been built to try to solve a real-world problem (although a rather mundane one at that), where I’ve created a system that keeps track of the outdoor and indoor temperatures. The temperatures are then sent to a custom application that processes the data and performs different so called “_flows_” which will be described later. What this ultimately means, is that the system reads and compares the incoming temperature values and decides to do multiple things with the information in different parallel processes:
+
+1. The data is saved in a database, with the corresponding identifying information (sensor **ID**), along with the recorded data regarding both the measured **temperature** and the **time** it was measured.
+2. The data is visualized on a separate dashboard which is updated live when new incoming data arrives in the system.
+3. The same data is also processed further: the measurements are compared with each other to find out which sensor has the lowest measured temperature. The result is then passed on to the dashboard as well as to a separate LCD display (see the _Hardware_ section below). The idea is that every time the sensor with the lowest reading changes, a notification is sent to the user via the dashboard and via the LCD display.
+
+The estimated time to complete this tutorial from start to finish is between 1 to 3 hours, depending on how much you’ve previously worked with programming, electronics and the Internet of Things (hereon referred to as _IoT_). It’s a somewhat complex project and therefore needs a lot of work to set up.
