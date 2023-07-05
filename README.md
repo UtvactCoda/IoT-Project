@@ -191,12 +191,13 @@ Using Thonny, upload the necessary _.py_-files for each device into their root f
     - _./Pico-WH/Common/credentials.py_
     - _./Pico-WH/Common/wifi.py_
     - _./Pico-WH/Sensors/Temperature/indoor.py_  
+ 
 
+## How to run the code  
 **Before running the code, ensure the following:**  
 Your Raspberry Pi Pico WH must be selected as the code interpreter in the bottom right of Thonny. If not, then click on the text (it might say something along the lines of "_Local Python 3_"), and then select your Pico in the drop-down list. The text should look like:  
 _MicroPython (Raspberry Pi Pico) COM **x**_  
 The "**x**" is a number that corresponds to the port in which the Pico is connected to your PC.  
 
-#### How to run the code
-For each of the Picos, you should run the _.py_ file that corresponds to its role/name. For example, on the Pico WH - Server (with the LCD on it), run _lcd.py_, and for the Pico WH - Outdoor, run the _outdoor.py_ file. You run the code by clicking on the green "Run" (play)-button in Thonny. To stop the program at any time, click the red "Stop"-button.
+For each of the Picos, you should run the _.py_ file that corresponds to its role/name. For example, on the Pico WH - Server (with the LCD on it), run _lcd.py_, and for the Pico WH - Outdoor, run the _outdoor.py_ file, etc. You run the code by clicking on the green "Run" (play)-button in Thonny. To stop the program at any time, click the red "Stop"-button.
 
