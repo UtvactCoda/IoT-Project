@@ -137,3 +137,66 @@ In the terminal of Visual Studio Code, enter the following command:
 - node node_modules/node-red/red.js  
 
 You can stop the program at any time by pressing the buttons **CTRL** and **C** at the same time while having the terminal in focus.
+
+
+
+## Firmware installation (installing MicroPython on the Raspberry Pi Pico WH)
+1. Go to the following webpage: https://micropython.org/download/rp2-pico-w/
+2. Click on the link that says something along the lines of:  
+    - _v1.20.0 (2023-04-26) .uf2 [Release notes] (latest)_
+    - **Note:** I use that exact firmware version as written above. The file I flashed the bootloader with is called:  
+        _rp2-pico-w-20230426-v1.20.0.uf2_
+3. Save this file to your PC.
+4. On your Raspberry Pi Pico WH, there is a button next to the micro-USB port. This is called “BOOTSEL”. Press and hold this button while connecting your Pico to the PC.
+5. A new storage media will appear in “My Computer”. It should be called: **RPI-RP2**.
+6. Navigate into that folder and drag-and-drop the file you just downloaded into the folder.
+7. Your pico might blink, and you might also hear the Windows USB connect/disconnect sounds a couple of times.
+8. When the process is done, the storage media called: **RPI-RP2** will disappear from “My Computer”.
+9. Done!  
+
+**Note:** If you don't see the storage media **RPI-RP2** anymore, then don't worry. We will use the program Thonny to access and edit the contents of the Pico. We can still communicate with the Pico even if it is not visible on "My Computer".  
+
+
+## Uploading the code to your Raspberry Pi Pico WH  
+The code to upload to the Picos are available here on GitHub. The files you need to download (or copy and paste the contents of) are specified below.  
+
+### File structure  
+- _./Code/_
+    - _./Pico-WH/Common/credentials.py_
+    - _./Pico-WH/Common/wifi.py_
+    - _./Pico-WH/Sensors/Temperature/outdoor.py_
+    - _./Pico-WH/Sensors/Temperature/indoor.py_
+    - _./Pico-WH/Servers/lcd.py_
+
+The “/” describes paths, or directories if you will; which describes where to find the code. There’s a folder called _“Code”_ here in the GitHub repository (where you are reading this tutorial) that you can look inside to find the code for all of the devices. The dot means "the current directory".  
+
+The _/Common/_ folder contains code that is copied and run on all of the devices, regardless of their purpose (measuring values, serving web pages etc.). In this case they share the same network configuration as they are all using the same Wi-Fi network.
+
+Using Thonny, upload the necessary _.py_-files for each device into their root folder (the top-most folder in the directory hierarchy). Below I have specified exactly which files should be uploaded to which Raspberry Pi Pico WH device.  
+
+#### Pico WH - Server (The one with the LCD attached to it)
+- _./Code/_
+    - _./Pico-WH/Common/credentials.py_
+    - _./Pico-WH/Common/wifi.py_
+    - _./Pico-WH/Servers/lcd.py_
+
+#### Pico WH - Outdoor (The one with the DS18B20 sensor attached to it)
+- _./Code/_
+    - _./Pico-WH/Common/credentials.py_
+    - _./Pico-WH/Common/wifi.py_
+    - _./Pico-WH/Sensors/Temperature/outdoor.py_
+
+#### Pico WH - Indoor (The one with the DHT11 sensor attached to it)
+- _./Code/_
+    - _./Pico-WH/Common/credentials.py_
+    - _./Pico-WH/Common/wifi.py_
+    - _./Pico-WH/Sensors/Temperature/indoor.py_  
+
+**Before running the code, ensure the following:**  
+Your Raspberry Pi Pico WH must be selected as the code interpreter in the bottom right of Thonny. If not, then click on the text (it might say something along the lines of "_Local Python 3_"), and then select your Pico in the drop-down list. The text should look like:  
+_MicroPython (Raspberry Pi Pico) COM **x**_  
+The "**x**" is a number that corresponds to the port in which the Pico is connected to your PC.  
+
+#### How to run the code
+For each of the Picos, you should run the _.py_ file that corresponds to its role/name. For example, on the Pico WH - Server (with the LCD on it), run _lcd.py_, and for the Pico WH - Outdoor, run the _outdoor.py_ file. You run the code by clicking on the green "Run" (play)-button in Thonny. To stop the program at any time, click the red "Stop"-button.
+
