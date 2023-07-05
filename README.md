@@ -100,3 +100,19 @@ https://www.electrokit.com/produkt/temperatursensor-vattentat-ds18b20/
 **Price:** 49.00 SEK  
 https://www.electrokit.com/produkt/digital-temperatur-och-fuktsensor-dht11/
 
+
+
+
+## Software
+**Note:** This guide is written towards Windows-users, so you may have to adapt some instructions if you’re using for example MacOS or Linux as your operating system.  
+
+**For this project, the following software is required**  
+- Thonny IDE (for writing code and running it on the Pico)
+- Visual Studio Code (for running Node-Red)
+- NodeJS (it runs the server)
+- npm (it’s a tool to install “packages”/modules in the NodeJS environment)
+- Node-Red (it runs the “_flow_” system with parallel processes, on top of NodeJS)
+- Additional Node-Red nodes (it is described in the section “_Setting up Node-Red Flows_” below)
+- MongoDB (the database that stores the recorded data)
+
+**Note:** The reason why I chose Thonny for writing code to the Raspberry Pi Pico WH is because it’s an “battery included” solution, which means it more or less works out of the box without any configurations (except for installing the firmware and choosing the correct COM-port). Visual Studio Code needs additional packages and configurations to work, which adds further complexity to the project. For the sake of simplicity in this tutorial, we’ll use Thonny.
