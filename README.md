@@ -106,13 +106,34 @@ https://www.electrokit.com/produkt/digital-temperatur-och-fuktsensor-dht11/
 ## Software
 **Note:** This guide is written towards Windows-users, so you may have to adapt some instructions if you’re using for example MacOS or Linux as your operating system.  
 
-**For this project, the following software is required**  
-- Thonny IDE (for writing code and running it on the Pico)
-- Visual Studio Code (for running Node-Red)
-- NodeJS (it runs the server)
-- npm (it’s a tool to install “packages”/modules in the NodeJS environment)
-- Node-Red (it runs the “_flow_” system with parallel processes, on top of NodeJS)
-- Additional Node-Red nodes (it is described in the section “_Setting up Node-Red Flows_” below)
-- MongoDB (the database that stores the recorded data)
+### For this project, the following software is required (my version numbers in parentheses)  
+- Thonny IDE: For writing code and running it on the Pico. (v4.0.2)
+- Visual Studio Code: An Integrated Development Environment (IDE) suitable for creating and editing server projects. (v1.79.2)
+- NodeJS: It's a server environment that in this case runs Node-Red. (v18.16.1)
+- npm: It’s a tool to install packages/modules. (v9.5.1)
+- MongoDB: The database that stores the recorded data. (v6.0.7)  
 
-**Note:** The reason why I chose Thonny for writing code to the Raspberry Pi Pico WH is because it’s an “battery included” solution, which means it more or less works out of the box without any configurations (except for installing the firmware and choosing the correct COM-port). Visual Studio Code needs additional packages and configurations to work, which adds further complexity to the project. For the sake of simplicity in this tutorial, we’ll use Thonny.
+**Note:** The reason why I chose Thonny for writing code to the Raspberry Pi Pico WH is because it’s an “battery included” solution, which means it more or less works out of the box without any configurations (except for installing the firmware and choosing the correct COM-port for the Pico). Visual Studio Code needs additional packages and configurations to work, which adds further complexity to the project. For the sake of simplicity in this tutorial, we’ll use Thonny.  
+
+Additionally, some npm packages are required. Essentially, npm packages are “modules”, or small applications that you can import/install into your project using the terminal in Visual Studio Code. In other programming languages the term “library” might also be used for the same concept.  
+
+### npm packages to install (my version numbers in parentheses)  
+- node-red: An environment where we can configure _flows_. (v3.0.2)
+- node-red-dashboard: An additional module for visualizing the data. (v3.5.0) 
+- node-red-node-mongodb: An additional module for easily integrating MongoDB into the _flows_. (v0.2.5)  
+
+### Installing the npm packages
+1. Create a new folder on your computer.
+2. Open Visual Studio Code and browse to this folder to make it your working directory.
+3. Run the following commands, one by one in the terminal of Visual Studio Code:  
+- npm i node-red
+- npm i node-red-dashboard
+- npm i node-red-node-mongodb  
+
+After each command, you will see a lot of text which you can ignore, unless it says something along the lines of “Cannot find module”, then you’ve written something wrong. Try again (make sure to write it exactly as above, or copy-paste it into the terminal).  
+
+### Running Node-Red  
+In the terminal of Visual Studio Code, enter the following command:  
+- node node_modules/node-red/red.js  
+
+You can stop the program at any time by pressing the buttons **CTRL** and **C** at the same time while having the terminal in focus.
