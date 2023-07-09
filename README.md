@@ -216,3 +216,15 @@ The "**x**" is a number that corresponds to the port in which the Pico is connec
 
 For each of the Picos, you should run the _.py_ file that corresponds to its role/name. For example, on the Pico WH - Server (with the LCD on it), run _lcd.py_, and for the Pico WH - Outdoor, run the _outdoor.py_ file, etc. You run the code by clicking on the green "Run" (play)-button in Thonny. To stop the program at any time, click the red "Stop"-button.
 
+
+
+## Setting up Node-Red Flows  
+A _flow_ describes a “chain reaction” of events, that happens sequentially one after another. These chain reactions can also happen I parallel, which make very complex systems possible in Node-Red. This makes it an excellent tool for this kind of project, since I want multiple things to happen at the same time – and when different things occur, I want different actions to happen depending on the type of events!  
+
+**Note:** Because of a constraint on how many characters this tutorial can contain, I will therefore just summarize what happens in each flow, as opposed to going through the exact configurations. Therefore, you'll need to consult with the Node-Red documentation to find out how to set up the following flows (sorry for the inconvenience!).
+
+### Flow: Incoming HTTP GET to MongoDB query: Fetch all sensor data - for the Server (LCD)  
+### Flow: Incoming Sensor HTTP POST to MongoDB insert  
+### Flow: Incoming Sensor HTTP POST to outgoing data to both Dashboard and Server (LCD)  
+### Flow: Compare sensor readings to find the lowest temperature and find out which sensor it belongs to (and store the result in a _flow_-variable)  
+### Flow (more complex): Check if the current sensor with the lowest reading is NOT the same as the last (the _flow_-variable), and if it is, trigger a Switch that tells a function to send the new current lowest sensor to the Dashboard and Server (LCD). Then also send a message with a suggested action (close or open the windows, based on the previous comparison's value)  
