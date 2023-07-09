@@ -193,8 +193,8 @@ You can stop the program at any time by pressing the buttons **CTRL** and **C** 
 
 ## Project assembly
 
-### Schematics
 
+### Schematics
 
 
 #### Server (LCD)
@@ -218,6 +218,7 @@ as opposed to the 3-pin KY-015 version below. The wiring COULD possibly be fault
 
 
 ### Images of the project parts
+
 
 
 ## Uploading the code to your Raspberry Pi Pico WH  
@@ -286,6 +287,18 @@ A _flow_ describes a “chain reaction” of events, that happens sequentially o
 ### Flow (more complex): Check if the current sensor with the lowest reading is NOT the same as the last (the _flow_-variable), and if the condition is fulfilled, trigger a Switch that sends the new sensor to the Dashboard and the Server (LCD). A message is also embedded with a suggested action (close or open the windows, based on the previous comparison's value)  
 ![Flow 3](https://github.com/UtvactCoda/IoT-Project/assets/117079256/2d3f643c-09d9-4b4b-b73b-b8267a9b4082)
 
+
+## Power consumption considerations
+- Because the LCD display needs relatively much power, it is permanently connected to a wall socket power supply.
+  - The energy consumption of the LCD depends on multiple factors, which includes but is not limited to: backlight brightness, refresh rate, pixel data and background processes, such as accepting GET requests and processing them, but also to update the screen in various ways (displaying data and showing text).
+- The indoor temperature sensor uses additional LEDs besides performing the temperature measurements, which makes it draw more power — which is why it also uses a wall socket power supply.
+- However, the indoor sensor ONLY measures temperatures/humidity (no LEDs or anything else) and reads the data every DELAY seconds (as defined in config.py). The power consumption is therefore determined by the constant's value (in essence, you the user decides this), but having it read the sensor value every 15 minutes should make it last for at least a couple of days (depending on how you power it). It would be suitable to use a powerbank with a bigger capacity, such as 2500 mAh.  
+**Note:** if using a powerbank, ensure that it allows low power consumption (at least down to 20 mA), because otherwise it will automatically shut down, which then sets the Pico to be permanently off because it won't power up again once it loses power. A reconnection then has to be made to the powerbank (unplugging and plugging in the cable again).
+- One could utilize deep sleep to further expand the battery life, which make the Picos go into "hibernation mode" between the measurements, but I had no time to implement this functionality. This could be an exercise for the reader.
+- LoraWAN is very lightweight regarding power consumption, but the sensors ran out of stock, which is why I didn't use it in this project.
+- Bluetooth Low Energy (BLE) is also "cheaper" in cost regarding battery consumption and for sending data, but as the Bluetooth functionality was recently released for the Pico W, there was not enough documentation in MicroPython for me to implement it. I therefore went with simple HTTP requests as the final choice as the communication protocol.
+- Since the Wi-Fi is permanently on, it is NOT efficient to be used with batteries. See the point regarding deep sleep above.
+- Using the maximum brightness of the LEDs shortens their lifespan. Therefore, a variable could be set in the config.py for brightness_level on a scale from 0 to 100, and then use Pulse Width Modulation (PWM) to control the brightness. (Not implemented; just an idea for further development of the software).
 
 ## Credits
 **The schematics and designs have been used for educational purposes.**  
