@@ -181,6 +181,19 @@ You can stop the program at any time by pressing the buttons **CTRL** and **C** 
 #### Server (LCD)
 ![Display_bb](https://github.com/UtvactCoda/IoT-Project/assets/117079256/475e23f5-fa48-4c07-b5e0-fbc297710937)
 
+#### Temperature sensor – Indoor (DHT11)  
+**IMPORTANT! The DHT11 sensor exists in different variations. I am NOT using this specific version.
+The sensor I'm using is right below this one (KY-015 version). I made this variant as an exercise in reading 
+datasheets and creating diagrams, but also to possibly help those with the alternative 4-pin version 
+as opposed to the 3-pin KY-015 version below. The wiring COULD possibly be faulty and have NOT been tested in a live circuit. Use at your own risk!**
+![Indoor sensor_bb](https://github.com/UtvactCoda/IoT-Project/assets/117079256/9d3db386-f272-487c-9add-8287c4a992e1)
+
+
+#### Temperature sensor – Indoor (DHT11, KY-015 version)  
+**This is the version I'm using for this project.**
+![Indoor sensor - KY-015_bb](https://github.com/UtvactCoda/IoT-Project/assets/117079256/4227d51e-b12c-4884-808d-9fda1fede85e)
+
+
 
 ### Images of the project parts
 
