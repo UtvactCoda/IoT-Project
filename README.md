@@ -300,6 +300,23 @@ A _flow_ describes a “chain reaction” of events, that happens sequentially o
 - Since the Wi-Fi is permanently on, it is NOT efficient to be used with batteries. See the point regarding deep sleep above.
 - Using the maximum brightness of the LEDs shortens their lifespan. Therefore, a variable could be set in the config.py for brightness_level on a scale from 0 to 100, and then use Pulse Width Modulation (PWM) to control the brightness. (Not implemented; just an idea for further development of the software).
 
+## Conclusion/Final thoughts  
+I have been very happy with how this project turned out. In the beginning, the idea was to use a single sensor on a single pico, using Arduino Cloud to publish and visualize the data, but it felt too simple and I therefore wanted to challenge myself so I went with my own self-hosted "custom stack", inspired by the TIG-stack, but entirely switched out in functionality. The new stack is as follows (as a short summary):
+- HTTP (communication protocol)
+- Node-Red (server; flows coordination)
+- MongoDB (storage)
+- Pico with LCD display (local storage in a .txt file)
+- Node-Red dashboard (visualization)
+- Pico with LCD display (additional visualization)
+
+### Additional information:
+- Everything is run on a local network.
+- The picos are connected to a separate guest network.
+- The router is configured to block internet access on the picos (only "intranet" communication is allowed between the devices).
+- I tried using MQTT with the Node-Red implementation of Aedes broker, but to no avail. There was too much troubleshooting. After several hours of trying without avail, I skipped MQTT entirely.
+- If I could redo the project I'd change the Node-Red dashboard to Grafana, because it seems to offer a wider range of functionality and seems to work "out of the box" without complex configurations and additional software (custom nodes).
+- My current project does not display historical data in the dashboard, this is because I didn't get the Node-Red chart node to work; only the Gauge and Text nodes, which renders saved data useless: I can only see what happens NOW. Unless I view the MongoDB data using MongoDBCompass.
+
 ## Credits
 **The schematics and designs have been used for educational purposes.**  
 
