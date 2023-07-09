@@ -224,7 +224,18 @@ A _flow_ describes a “chain reaction” of events, that happens sequentially o
 **Note:** Because of a constraint on how many characters this tutorial can contain, I will therefore just summarize what happens in each flow, as opposed to going through the exact configurations. Therefore, you'll need to consult with the Node-Red documentation to find out how to set up the following flows (sorry for the inconvenience!).
 
 ### Flow: Incoming HTTP GET to MongoDB query: Fetch all sensor data - for the Server (LCD)  
+![DB Sensors GET](https://github.com/UtvactCoda/IoT-Project/assets/117079256/28b7178b-005d-4256-b0a4-c5ff7c007c0c)
+
 ### Flow: Incoming Sensor HTTP POST to MongoDB insert  
+![DB post sensor data](https://github.com/UtvactCoda/IoT-Project/assets/117079256/475edfd0-0040-40fb-8846-d0d7dcf3b2b4)
+
 ### Flow: Incoming Sensor HTTP POST to outgoing data to both Dashboard and Server (LCD)  
+![LCD and Dashboard](https://github.com/UtvactCoda/IoT-Project/assets/117079256/36a6213a-352c-4ceb-9667-262dab128fc7)
+
 ### Flow: Compare sensor readings to find the lowest temperature and find out which sensor it belongs to (and store the result in a _flow_-variable)  
-### Flow (more complex): Check if the current sensor with the lowest reading is NOT the same as the last (the _flow_-variable), and if it is, trigger a Switch that tells a function to send the new current lowest sensor to the Dashboard and Server (LCD). Then also send a message with a suggested action (close or open the windows, based on the previous comparison's value)  
+![Flow 1 and 2 with comparison](https://github.com/UtvactCoda/IoT-Project/assets/117079256/4b05d467-3abd-482e-a759-095231cf38c9)
+
+### Flow (more complex): Check if the current sensor with the lowest reading is NOT the same as the last (the _flow_-variable), and if the condition is fulfilled, trigger a Switch that sends the new sensor to the Dashboard and the Server (LCD). A message is also embedded with a suggested action (close or open the windows, based on the previous comparison's value)  
+![Flow 3](https://github.com/UtvactCoda/IoT-Project/assets/117079256/2d3f643c-09d9-4b4b-b73b-b8267a9b4082)
+
+
