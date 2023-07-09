@@ -172,6 +172,19 @@ You can stop the program at any time by pressing the buttons **CTRL** and **C** 
 **Note:** If you don't see the storage media **RPI-RP2** anymore, then don't worry. We will use the program Thonny to access and edit the contents of the Pico. We can still communicate with the Pico even if it is not visible on "My Computer".  
 
 
+## Project assembly
+
+### Schematics
+
+
+
+#### Server (LCD)
+![Display_bb](https://github.com/UtvactCoda/IoT-Project/assets/117079256/475e23f5-fa48-4c07-b5e0-fbc297710937)
+
+
+### Images of the project parts
+
+
 ## Uploading the code to your Raspberry Pi Pico WH  
 The code to upload to the Picos are available here on GitHub. The files you need to download (or copy and paste the contents of) are specified below.  
 
@@ -239,3 +252,22 @@ A _flow_ describes a “chain reaction” of events, that happens sequentially o
 ![Flow 3](https://github.com/UtvactCoda/IoT-Project/assets/117079256/2d3f643c-09d9-4b4b-b73b-b8267a9b4082)
 
 
+## Credits
+**The schematics and designs have been used for educational purposes.**  
+
+The program used for creating the schematics is called Fritzing. Learn more about it here: https://fritzing.org/  
+
+### Fritzing designs credits  
+- Raspberry Pi: Pico W board:  
+https://datasheets.raspberrypi.com/picow/PicoW-Fritzing.fzpz  
+
+- Pico Display Pack 2.0 (pim580): vanepp:  
+https://forum.fritzing.org/t/icp-10125-and-pim580/14644  
+
+- DHT11: adafruit/Fritzing-Library GitHub repository:  
+https://github.com/adafruit/Fritzing-Library  
+License: https://github.com/adafruit/Fritzing-Library/blob/master/LICENSE.txt  
+No changes were made to the original material.  
+
+- DHT11 (KY-015): iot-lnu GitHub repository:  
+https://github.com/iot-lnu/applied-iot/tree/master/Raspberry%20Pi%20Pico%20(W)%20Micropython/sensor-examples/P5_DHT_11_DHT_22/connection  
