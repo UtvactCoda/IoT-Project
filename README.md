@@ -194,6 +194,9 @@ as opposed to the 3-pin KY-015 version below. The wiring COULD possibly be fault
 ![Indoor sensor - KY-015_bb](https://github.com/UtvactCoda/IoT-Project/assets/117079256/4227d51e-b12c-4884-808d-9fda1fede85e)
 
 
+#### Temperature sensor – Outdoor  
+![Outdoor sensor_bb](https://github.com/UtvactCoda/IoT-Project/assets/117079256/371fdcb5-b78b-4315-98d1-f51d3dcce48a)
+
 
 ### Images of the project parts
 
