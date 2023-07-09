@@ -77,12 +77,27 @@ https://www.electrokit.com/produkt/labbsladd-40-pin-30cm-hane-hane/
 **Price:** 49.00 SEK  
 https://www.electrokit.com/produkt/labbsladd-40-pin-30cm-hona-hane/
 
-3 x 1k-Ohm resistor  
-**Note:** I used a higher resistance value than necessary for the LEDs. This is because I wanted a more “dim” light, as the LEDs can sometimes be pretty intense with their (default) maximum brightness setting (although it is also possible to reduce the brightness of LEDs using Pulse Width Modulation (PWM)).
-Resistors are often sold in bulk, which also makes it cheaper per unit. Below is a kit with a varied assortment of resistor values.  
-**What it is:** It adds more resistance to a circuit, which gives components less power, i.e., LEDs get a lower brightness level in this case.  
-**Price:** 159.90 SEK  
-https://www.kjell.com/se/produkter/el-verktyg/elektronik/komponentsatser/playknowlogy-sortiment-med-resistorer-600-pack-p90646
+4 x Resistors  
+**What it is:** It adds more electrical resistance to a circuit which lowers the current running in the circuit. In other words, applying a bigger resistance value means that for example LEDs get lower brightness. If a high enough value is used, the light won’t even turn on!  
+They are often sold in bulk — below is a kit with a varied assortment of resistor values (1460-pack).  
+
+**Additional information**  
+Resistance, or _Ohms_ as it is called in “electronics language”, uses the symbol: Ω (the uppercase Greek letter Omega) to denote the values of resistors. For example:  
+- 220 Ohms
+- 220 Ω  
+both mean the same thing.  
+
+**For this project you’ll need**  
+2 x 68 Ω resistor (red and yellow LED)  
+1 x 15 Ω resistor (blue LED)  
+1 x 4.7k Ω resistor (used as a pull-up resistor for the sensor: DS18B20)  
+
+**IMPORTANT:** I wrote a “k” after 4.7 above which means “kilo”, in its turn meaning “thousands”. This means that the resistor’s value is 4700 Ohms. You can think of it as the difference between 1 gram and 1 kilogram, but for resistor values!  
+
+**Note:** If you buy the cheaper kit with 600 pieces, you won't get the exact values for this tutorial, which means you must add the next available value. This means: for example – instead of using 68 ohms which can be found in the 1460-pack, you would need to substitute it with a resistor value of 100 ohms from the 600-pack, which is the closest match (remember to use the next HIGHER value, because otherwise, you risk destroying your LEDs).  
+**Price:** 199.90 SEK  
+https://www.kjell.com/se/produkter/el-verktyg/elektronik/komponentsatser/playknowlogy-motstandssortiment-1460-pack-p90435
+
 
 3 x 5mm LEDs (I used green, yellow, and red colors)  
 **Note:** LEDs can be bought separately (more expensive) or in bulk (cheaper price per unit). Below is the LED kit I used for this project.  
