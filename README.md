@@ -82,10 +82,29 @@ https://www.electrokit.com/produkt/labbsladd-40-pin-30cm-hona-hane/
 They are often sold in bulk — below is a kit with a varied assortment of resistor values (1460-pack).  
 
 **Additional information**  
-Resistance, or _Ohms_ as it is called in “electronics language”, uses the symbol: Ω (the uppercase Greek letter Omega) to denote the values of resistors. For example:  
+Resistance, or _Ohms_ as it is called in “electronics language”, is often expressed using the symbol: Ω (the uppercase Greek letter Omega). You will often see this when working with resistors, as their values are usually expressed this way. For example:  
 - 220 Ohms
 - 220 Ω  
 both mean the same thing.  
+
+The resistor values have been calculated based on the 5mm LED specifications on Kjell's product webpage below:  
+Red, green, yellow at 10 mA: 1,95-2,05 V  
+Red, green, yellow at 20 mA: 2,01-2,10 V  
+White, blue at 10 mA: 2,87-2,94 V  
+White, blue at 20 mA: 3,01-3,11 V  
+
+By using Ohm's law, we can calculate the resistor values using the following formula:  
+Resistance = Voltage / Current  
+Or as it's more known as: R = V / I  
+Resistance is the resistor value to use, Voltage is the Pico's 3.3V output and the Current is either 10 mA or 20 mA depending on which LED we use and the desired effect.
+In this project I went with 20 mA, hence the "0.02" in the calculations below.  
+
+**Substituting the variables with the real values gives**  
+Red LED = (3.3 - 2.01) / 0.02 = 64.5, rounded up to closest resistor value = 68Ω  
+Yellow LED = (3.3 - 2.01) / 0.02 = 64.5, rounded up to the closest resistor value = 68Ω  
+Blue LED = (3.3 - 3.01) / 0.02 = 14.5, rounded up to the closest resistor value = 15Ω.  
+
+The reason why we round UP instead of down, is because if there is too little resistance, we risk burning our LEDs as they will then get too high current in the circuit.  
 
 **For this project you’ll need**  
 2 x 68 Ω resistor (red and yellow LED)  
